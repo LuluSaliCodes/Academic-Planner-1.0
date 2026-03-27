@@ -1,10 +1,12 @@
 body {
     background: #22223b;
+    margin-top: 50px;
 }
 
 .welcome-msg {
     color: #9a8c98;
     text-align: center;
+    text-decoration: underline;
     font-size: 100px;
 }
 
