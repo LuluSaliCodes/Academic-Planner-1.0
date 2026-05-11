@@ -15,3 +15,12 @@ function addModuleToList() {
     document.getElementById("module-el").value = ""
 }
 
+function createModuleNotes() {
+    let i
+    let displayEl = document.getElementById("display-el")
+    for (i = 0; i < numModules; i++) {
+        let newMod = document.createElement("a")
+        displayEl.appendChild(newMod)
+    }
+}
+
