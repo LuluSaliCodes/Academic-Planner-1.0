@@ -21,7 +21,7 @@ h3 {
     font-size: 60px;
 }
 
-.intro-box {
+.msg-box {
     background: rgba(255, 255, 255, 0.15);
     -webkit-backdrop-filter: blur(7px);
     backdrop-filter: blur(7px);
@@ -38,14 +38,17 @@ h3 {
     font-weight: bold;
 }
 
-.intro-msg {
+.msg {
    color: #F2E9E4;
    text-align: center;
    font-size: 25px;
 }
 
 .arr-btn {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 190px;
     padding: 12px 24px;
     background-color: #a4bfea;
     border: 1px solid white;
@@ -66,17 +69,19 @@ h3 {
     font-size: 20px
 }
 
-#module-el {
-    background-color: #22223b;
-    border: 1px solid #4A4E69;
+#input-el {
+    background: rgba(255, 255, 255, 0.15);
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    border: 2px solid rgba(158, 171, 224, 0.992);
     border-radius: 50px;
     display: block;
     margin: 10px auto;
     font-family:'Times New Roman', Times, serif;
-    font-size: 40px;
+    font-size: 20px;
     text-align: center;
-    color: #C9ADA7;
-    width: 1000px;
+    color: #F2E9E4;
+    width: 400px;
     padding: 10px 20px
 }
 
@@ -87,7 +92,7 @@ h3 {
     display: block;
     margin: 10px auto;
     font-family:'Times New Roman', Times, serif;
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
     color: #22223b;
     width: 120px;
