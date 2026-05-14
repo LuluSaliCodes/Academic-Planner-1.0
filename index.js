@@ -1,26 +1,19 @@
-let moduleEl = document.getElementById("module-el")
-let numModules = 0
-let arrModules = []
+const form = document.getElementById("modInput");
+const inputBox = document.getElementById("input-el");
 
-function addModuleToList() {
-    let module = moduleEl.value
-    let moduleList = document.getElementById("module-list")
-    let newListItem = document.createElement("li")
+const savedMods = [];
 
-    newListItem.appendChild(document.createTextNode(module))
-    moduleList.appendChild(newListItem)
-    numModules++
-    arrModules.push(module)
-    
-    document.getElementById("module-el").value = ""
-}
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const value = inputBox.value.trim();
 
-function createModuleNotes() {
-    let i
-    let displayEl = document.getElementById("display-el")
-    for (i = 0; i < numModules; i++) {
-        let newMod = document.createElement("a")
-        displayEl.appendChild(newMod)
+    // Ignore empty input
+    if (value === "") {
+        return;
     }
-}
 
+    // Save the input
+    savedMods.push(value);
+    console.log(savedMods);
+    inputBox.value = "";
+});
