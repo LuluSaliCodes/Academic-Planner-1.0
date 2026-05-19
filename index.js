@@ -2,33 +2,42 @@ const form = document.getElementById("modInput");
 const inputBox = document.getElementById("input-el");
 const savedMods = [];
 
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const value = inputBox.value.trim();
+if (form) {
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const value = inputBox.value.trim();
 
-    // Ignore empty input
-    if (value === "") {
-        return;
-    }
+        // Ignore empty input
+        if (value === "") {
+            return;
+        }
 
-    // Save the input
-    savedMods.push(value);
-    console.log(savedMods);
+        // Save the input
+        savedMods.push(value);
+        console.log(savedMods);
 
-    localStorage.setItem(
-        "myMods",
-        JSON.stringify(savedMods)
-    );
+        localStorage.setItem(
+            "myMods",
+            JSON.stringify(savedMods)
+        );
 
-    inputBox.value = "";
-});
+        inputBox.value = "";
+    });
+}
 
 const outputMods = document.getElementById("mod-list");
-const storedMods = localStorage.getItem("myMods");
-const arrMods = JSON.parse(storedMods) || [];
 
-for (const item of arrMods) {
-    const m = document.createElement("li");
-    m.textContent = item;
-    outputMods.appendChild(m);
+if (outputMods) { 
+    const storedMods = localStorage.getItem("myMods");
+    const arrMods = JSON.parse(storedMods) || [];
+
+    for (let i = 0; i < arrMods.length; i++) {
+        console.log(arrMods[i]);
+    }
+
+    for (const item of arrMods) {
+        const m = document.createElement("li");
+        m.textContent = item;
+        outputMods.appendChild(m);
+    }
 }
