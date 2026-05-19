@@ -36,7 +36,7 @@ if (outputMods) {
     }
 
     for (const item of arrMods) {
-        const m = document.createElement("li");
+        const m = document.createElement("p");
         m.textContent = item;
         outputMods.appendChild(m);
     }
