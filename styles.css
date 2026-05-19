@@ -1,6 +1,8 @@
 body {
     background-image: url("images/space\ pixel\ GIF.gif");
-    /*margin-top: 50px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
@@ -45,10 +47,6 @@ h3 {
 }
 
 .arr-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 190px;
     padding: 12px 24px;
     background-color: #a4bfea;
     border: 1px solid white;
@@ -63,11 +61,11 @@ h3 {
     background-color: #759dde;
 }
 
-.two-btns {
+.nav-btns {
     display: flex;
-    /*flex-direction: row;*/
     justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    gap: 20px;
 }
 
 #input-el {
@@ -76,8 +74,7 @@ h3 {
     backdrop-filter: blur(7px);
     border: 2px solid rgba(158, 171, 224, 0.992);
     border-radius: 50px;
-    display: block;
-    margin: 10px auto;
+    margin: 20px 25px;
     font-family:'Times New Roman', Times, serif;
     font-size: 20px;
     text-align: center;
@@ -88,7 +85,6 @@ h3 {
 
 #module-list {
     color: #C9ADA7;
-    display: block;
     margin: 10px auto;
     font-family:'Times New Roman', Times, serif;
     font-size: 40px;
