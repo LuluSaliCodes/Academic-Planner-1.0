@@ -47,9 +47,25 @@ if (db_container) {
     for (const el of mods) {
         const modCard = document.createElement("div");
 
-        modCard.classList.add("dashboard-block");
+        modCard.classList.add("dashboard-card");
         modCard.id = 'block-${el}';
-        modCard.textContent = el;
+
+        const heading = document.createElement("h3");
+        heading.textContent = el;
+        modCard.appendChild(heading);
+
+        //Input and Button Container
+        const addTasks = document.createElement("div");
+        addTasks.classList.add("add-container");
+
+        const input = document.createElement("input");
+        const button = document.createElement("button");
+        button.textContent = "+";
+
+        addTasks.appendChild(input);
+        addTasks.appendChild(button);
+
+        modCard.appendChild(addTasks)
         db_container.appendChild(modCard);
     }
 }
