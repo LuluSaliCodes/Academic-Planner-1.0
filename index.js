@@ -38,18 +38,18 @@ if (outputMods) {
     }
 }
 
-const modBlocks = document.getElementById("block-container");
+const db_container = document.getElementById("block-container");
 
-if (modBlocks) {
+if (db_container) {
     const temp = localStorage.getItem("myMods");
     const mods = JSON.parse(temp) || [];
 
     for (const el of mods) {
-        const mod_el = document.createElement("div");
+        const modCard = document.createElement("div");
 
-        mod_el.classList.add("dashboard-block");
-        mod_el.id = 'block-${el}';
-        mod_el.textContent = el;
-        modBlocks.appendChild(mod_el);
+        modCard.classList.add("dashboard-block");
+        modCard.id = 'block-${el}';
+        modCard.textContent = el;
+        db_container.appendChild(modCard);
     }
 }
