@@ -50,11 +50,17 @@ if (db_container) {
         modCard.classList.add("dashboard-card");
         modCard.id = 'block-${el}';
 
+        //Heading Top Section
         const heading = document.createElement("h3");
         heading.textContent = el;
         modCard.appendChild(heading);
 
-        //Input and Button Container
+        //List Middle Section
+        const listSection = document.createElement("div");
+        listSection.classList.add("list-section");
+        modCard.appendChild(listSection);
+
+        //Input and Button Section - Bottom
         const addTasks = document.createElement("div");
         addTasks.classList.add("add-container");
 
