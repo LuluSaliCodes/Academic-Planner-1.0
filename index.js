@@ -61,15 +61,21 @@ if (db_container) {
         modCard.appendChild(listSection);
 
         //Input and Button Section - Bottom
-        const addTasks = document.createElement("div");
-        addTasks.classList.add("add-container");
+        const addTasks = document.createElement("form");
+        addTasks.classList.add("task-form");
+        addTasks.id = 'task';
 
         const input = document.createElement("input");
-        const button = document.createElement("button");
-        button.textContent = "+";
-
         addTasks.appendChild(input);
-        addTasks.appendChild(button);
+
+        task.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const value = inputBox.value.trim();
+
+            if (value === "") {
+                return;
+            }
+        });
 
         modCard.appendChild(addTasks)
         db_container.appendChild(modCard);

@@ -49,7 +49,7 @@ button {
     height: 100px;
 }
 
-.add-container {
+.task-form {
     display: flex;
     justify-content: center;
     gap: 10px;
