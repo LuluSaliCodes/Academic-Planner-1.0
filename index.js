@@ -65,16 +65,23 @@ if (db_container) {
         addTasks.classList.add("task-form");
         addTasks.id = 'task';
 
-        const input = document.createElement("input");
-        addTasks.appendChild(input);
+        const task_input = document.createElement("input");
+        addTasks.appendChild(task_input);
 
-        task.addEventListener("submit", (event) => {
+        addTasks.addEventListener("submit", (event) => {
             event.preventDefault();
-            const value = inputBox.value.trim();
+            const value = task_input.value.trim();
 
             if (value === "") {
                 return;
             }
+
+            const taskItem = document.createElement("ul");
+            taskItem.classList.add("task-item");
+            taskItem.textContent = value;
+            listSection.appendChild(taskItem);
+
+            task_input.value = "";
         });
 
         modCard.appendChild(addTasks)
