@@ -61,6 +61,7 @@ if (db_container) {
         
 
         const list = document.createElement("ul");
+        list.id = 'tasks-list';
         listSection.appendChild(list);
 
         modCard.appendChild(listSection);
@@ -84,6 +85,11 @@ if (db_container) {
             const taskItem = document.createElement("li");
             taskItem.classList.add("task-item");
             taskItem.textContent = value;
+
+            taskItem.addEventListener("click", () => {
+                taskItem.classList.toggle("completed");
+            });
+
             list.appendChild(taskItem);
 
             task_input.value = "";
