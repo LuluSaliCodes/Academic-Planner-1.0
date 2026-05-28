@@ -58,6 +58,11 @@ if (db_container) {
         //List Middle Section
         const listSection = document.createElement("div");
         listSection.classList.add("list-section");
+        
+
+        const list = document.createElement("ul");
+        listSection.appendChild(list);
+
         modCard.appendChild(listSection);
 
         //Input and Button Section - Bottom
@@ -76,10 +81,10 @@ if (db_container) {
                 return;
             }
 
-            const taskItem = document.createElement("ul");
+            const taskItem = document.createElement("li");
             taskItem.classList.add("task-item");
             taskItem.textContent = value;
-            listSection.appendChild(taskItem);
+            list.appendChild(taskItem);
 
             task_input.value = "";
         });
