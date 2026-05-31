@@ -14,7 +14,6 @@ if (form) {
 
         // Save the input
         savedMods.push(value);
-        //console.log(savedMods);
 
         localStorage.setItem(
             "myMods",
@@ -59,7 +58,6 @@ if (db_container) {
         const listSection = document.createElement("div");
         listSection.classList.add("list-section");
         
-
         const list = document.createElement("ul");
         list.id = 'tasks-list';
         listSection.appendChild(list);
@@ -74,8 +72,6 @@ if (db_container) {
         const task_input = document.createElement("input");
         addTasks.appendChild(task_input);
 
-        let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-
         //Adds tasks from input to To-Do List
         addTasks.addEventListener("submit", (event) => {
             event.preventDefault();
@@ -89,15 +85,12 @@ if (db_container) {
             const taskItem = document.createElement("li");
             taskItem.classList.add("task-item");
             taskItem.textContent = value;
-            tasks.push(value); //Add task to tasks array
 
             taskItem.addEventListener("click", () => {
                 taskItem.classList.toggle("completed");
             });
 
             list.appendChild(taskItem);
-
-            localStorage.setItem("tasks", JSON.stringify(tasks));
 
             task_input.value = "";
         });
